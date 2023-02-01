@@ -1,5 +1,6 @@
 import React from "react";
 import "./CreditBody.css";
+import iconRuble from "./iconRuble.png";
 
 export function CreditBody({
     label,
@@ -14,14 +15,18 @@ export function CreditBody({
       }   
     return (
         <div className="creditBody">
-            <h4 className="label">{label}</h4>
-            <input 
-                className="creditSum" 
-                type="text" 
-                value={value}
-                onChange={handleChange} 
-            />
-            <h4 className="ruble">₽</h4>
+            <div className="creditLabel">{label}</div> 
+            <div className="inputField">
+                <input 
+                    className="creditValue" 
+                    type="text" 
+                    value={value}
+                    onChange={handleChange} 
+                />
+                <div className="iconRuble">
+                    <img src={iconRuble} />
+                </div>
+            </div>
         </div>
     )
 }

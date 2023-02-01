@@ -1,4 +1,5 @@
 import React from "react";
+import "./SmartInput.css";
 
 export function SmartInput({
   label,
@@ -17,36 +18,42 @@ export function SmartInput({
       }
     }   
     return (
-    <div className="initPayment">
-      <h4>{label}</h4>
-      <input
-        className="initPaymentSum"
-        type="text"
-        value={value}
-        onChange={handleChange}
-        style={{ outline: value > max ? "2px solid red" : undefined}}
-      />
-      <input
-        type="range"
-        value={value}
-        onChange={handleChange}
-        min={min}
-        max={max}
-        step={1}
-      />
-      <div className="percentageBtn">
-        {hints.map(hint => {
-          return (
-            <button 
-                className="hint" 
-                onClick={() => onChange(hint)}
-            >
-                    {hint}{
-                    measurementUnit}
-            </button>
-          )
-        })}
-      </div>
+    <div className="smartInput">
+        <div className="smartInputLabel">{label}</div>
+        <div className="smartInputField">
+            <input
+                className="smartInputValue"
+                type="text"
+                value={value}
+                onChange={handleChange}
+                style={{ outline: value > max ? "2px solid red" : undefined}}
+            />
+            <div className="measurementValue">
+                {measurementUnit}
+            </div>
+        </div>
+        <input
+            className="smartInputValueRange"
+            type="range"
+            value={value}
+            onChange={handleChange}
+            min={min}
+            max={max}
+            step={1}
+        />
+        <div className="popValuesBtn">
+            {hints.map(hint => {
+                return (
+                    <button 
+                        className="hint" 
+                        onClick={() => onChange(hint)}
+                    >
+                        {hint}
+                        {measurementUnit}
+                    </button>
+                )
+            })}
+        </div>
     </div>
   )
 }

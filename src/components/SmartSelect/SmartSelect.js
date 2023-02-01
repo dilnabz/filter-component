@@ -18,30 +18,6 @@ export function SmartSelect({
                         </p>
                     )
                 })}
-                {/* <p>
-                    <input 
-                    className="all" 
-                    type='radio' 
-                    name="buildingType" 
-                    value='all' />
-                        Все
-                </p>
-                <p>
-                    <input 
-                    className="secondary" 
-                    type='radio' 
-                    name="buildingType" 
-                    value='secondary'/>
-                        Вторичка
-                </p>
-                <p>
-                    <input 
-                    className="newBuilding" 
-                    type='radio' 
-                    name="buildingType" 
-                    value='newBuilding' />
-                        Новостройка
-                </p> */}
             </div>
     )
 }

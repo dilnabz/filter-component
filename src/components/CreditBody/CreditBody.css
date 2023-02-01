@@ -1,46 +1,61 @@
 .creditBody {
     display: flex;
+    /* position: absolute; */
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px;
     gap: 6px;
-
-    width: 311px;
-    height: 68px;
+    margin-top: 30px; /* добавила сама */
+    /* width: 311px;
+    height: 68px; */
 }
 
-.label {
-    width: 56px;
-    height: 22px;
+.creditLabel {
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
-    color: #152242;
+    margin: 0; /* добавила сама */
 }
 
-.creditSum {
+.inputField {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     box-sizing: border-box;
     width: 311px;
-    height: 40px;
+    height: 40px; 
     background: #FFFFFF;
     border: 1px solid #CED1D7;
     border-radius: 4px;
 }
 
-.ruble {
-    position: absolute;
+.creditValue {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    width: 225px;
+    height: 22px;
+    border: none;
+    padding: 0 0 0 5px; /* добавила сама */
+    font-size: 16px;
+    /* left: 12px;
+    top: 9px; */
+}
+
+.creditValue:focus {
+    outline: 0;
+}
+
+.iconRuble {
     width: 10px;
     height: 22px;
-    right: 12px;
-    top: 9px;  
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
+    /* right: 12px;
+    top: 9px; */
     display: flex;
     align-items: center;
     text-align: right;
+    padding: 0 15px 0 0; /* добавила сама */
 }
