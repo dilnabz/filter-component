@@ -1,4 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
+import "./SmartSelect.css";
+import { SmartRadio } from "./SmartRadio/SmartRadio";
 
 export function SmartSelect({
     label,
@@ -6,18 +8,15 @@ export function SmartSelect({
 }) {
     return(
         <div className="building">
-                <h3>{label}</h3>
-                {types.map(type => {
-                   return ( 
-                        <p>
-                            <input
-                                type="radio" 
-                                name="buildingType"
-                            />
-                            {type}
-                        </p>
-                    )
-                })}
+                <div className="buildingLabel">{label}</div>
+                <div className="radioGroup">
+                    {types.map(type => {
+                        return ( 
+                            <SmartRadio option={type}/>
+                        )
+                    })}
+                </div>
+                
             </div>
     )
 }

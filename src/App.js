@@ -28,24 +28,6 @@ export function App() {
         ["ПСБ", psbIcon],
         ["Райффайзенбанк", raiffaizenIcon]
     ]
-    // const banks = [
-    //     "ВТБ", 
-    //     "Совкомбанк", 
-    //     "Росбанк Дом", 
-    //     "Газпромбанк", 
-    //     "Открытие", 
-    //     "ПСБ", 
-    //     "Райффайзенбанк"
-    // ];
-    // const bankIcons = [
-    //     vtbIcon,
-    //     sovcombankIcon,
-    //     rosbankIcon,
-    //     gazpromIcon,
-    //     otkritieIcon,
-    //     psbIcon,
-    //     raiffaizenIcon
-    // ]
     const buildingTypes = ["Все", "Вторичка", "Новостройка"];
     const housingTypes = ["Дом", "Квартира", "Апартаменты"];
     console.log({initPaymentValue})
@@ -86,7 +68,6 @@ export function App() {
             <Banks 
                 label={"Банк"}
                 banks={subBanks}
-                // icons={bankIcons}
             />
             <SmartSelect 
                 label={"Тип объекта"}

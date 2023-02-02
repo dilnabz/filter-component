@@ -1,34 +1,8 @@
-.bankContainer {
-    display: flex;
-    flex-direction: column;
-    padding: 8px 0px;
-    gap: 8px;
-    /* width: 231px;
-    height: 328px; */
-    margin-top: 20px;
-}
-
-.bankLabel {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    display: flex;
-    color: #152242;
-}
-
-.bankField {
-    display: flex;
-    flex-direction: column;
-    /* padding: 0px;
-    width: 231px;
-    height: 280px; */
-}
-
-/* .bankItem {
+.bankItem {
     display: flex;
     align-items: center;
     padding: 8px 16px;
+    margin: 4px 0;
     gap: 8px;
     height: 40px;
     background: #FFFFFF;
@@ -44,6 +18,7 @@
     display: flex;
     align-items: center;
     padding: 8px 16px;
+    margin: 4px 0;
     gap: 8px;
     height: 40px;
     background: #EEEEEE;
@@ -62,4 +37,4 @@
 .bankIcon {
     width: 24px;
     height: 24px;
-} */
+}

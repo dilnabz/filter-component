@@ -1,4 +1,5 @@
 import React from "react";
+import { BankItem } from "./BankItem/BankItem";
 import "./Banks.css"
 
 export function Banks({
@@ -11,10 +12,7 @@ export function Banks({
                 <div className="bankField">
                     {banks.map(bank => {
                         return(
-                            <div className="bankItem">
-                                <div className="bankIcon"><img src={bank[1]} /></div>
-                                <div className="bankName">{bank[0]}</div>
-                            </div>
+                            <BankItem icon ={bank[1]} name={bank[0]}/>
                         )
                     })}
                 </div>
