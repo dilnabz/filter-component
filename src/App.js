@@ -13,24 +13,32 @@ import otkritieIcon from "./components/Logos/Otkritie.png";
 import psbIcon from "./components/Logos/PSB.png";
 import raiffaizenIcon from "./components/Logos/Raiffaizen.png";
 
+const buildingTypes = ["all", "new", "secondary"];
+const buildingType2Translation = {
+    "all": "Все",
+    "new":  "Новостройка",
+    "secondary": "Вторичка"
+};
+const percentages = [10, 15, 20, 25, 30];
+const mortgageTerms = [5, 10, 15, 20];
+const subBanks = [
+    ["vtb","ВТБ", vtbIcon],
+    ["sovcom","Совкомбанк", sovcombankIcon],
+    ["rosbank","Росбанк Дом", rosbankIcon],
+    ["gpb","Газпромбанк", gazpromIcon],
+    ["open","Открытие", otkritieIcon],
+    ["psb","ПСБ", psbIcon],
+    ["raif","Райффайзенбанк", raiffaizenIcon]
+]
+
+
+const housingTypes = ["Дом", "Квартира", "Апартаменты"];
 export function App() {
     const [creditValue, setCreditValue] = useState(1000000);
     const [initPaymentValue, setInitPaymentValue] = useState(10);
     const [mortgageTermValue, setMortgageTermValue] = useState(5);
-    const percentages = [10, 15, 20, 25, 30];
-    const mortgageTerms = [5, 10, 15, 20];
-    const subBanks = [
-        ["ВТБ", vtbIcon],
-        ["Совкомбанк", sovcombankIcon],
-        ["Росбанк Дом", rosbankIcon],
-        ["Газпромбанк", gazpromIcon],
-        ["Открытие", otkritieIcon],
-        ["ПСБ", psbIcon],
-        ["Райффайзенбанк", raiffaizenIcon]
-    ]
-    const buildingTypes = ["Все", "Вторичка", "Новостройка"];
-    const housingTypes = ["Дом", "Квартира", "Апартаменты"];
-    console.log({initPaymentValue})
+    const [buildingType, setBuildingType] = useState("secondary");
+    const [selectedBanks, setSelectedBanks] = useState(["vtb", "psb", "sovcom"]);
     return (
     <div className="container">
         <div className="header">
@@ -68,15 +76,22 @@ export function App() {
             <Banks 
                 label={"Банк"}
                 banks={subBanks}
+                value={selectedBanks}
+                onChange={setSelectedBanks}
             />
+            --------------------
             <SmartSelect 
                 label={"Тип объекта"}
                 types={buildingTypes}
+                translations={buildingType2Translation}
+                onChange={setBuildingType}
+                value={buildingType}
             />
-            <SmartSelect 
+            --------------------
+            {/* <SmartSelect 
                 label={"Тип жилья"}
                 types={housingTypes}
-            />
+            /> */}
             <div className="insurance">
                 <p>
                     <input 

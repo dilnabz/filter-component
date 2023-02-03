@@ -45,6 +45,7 @@ export function SmartInput({
             {hints.map(hint => {
                 return (
                     <button 
+                        disabled={hint === value}
                         className="hint" 
                         onClick={() => onChange(hint)}
                     >

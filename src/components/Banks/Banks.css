@@ -25,15 +25,24 @@
     height: 280px; */
 }
 
-/* .bankItem {
+.bankItem {
     display: flex;
     align-items: center;
     padding: 8px 16px;
+    margin: 4px 0;
     gap: 8px;
     height: 40px;
     background: #FFFFFF;
     border-radius: 40px;
     cursor: pointer;
+}
+
+.bankItem input[type="checkbox"] {
+    display: none;
+}
+
+.bankItemClick input[type="checkbox"] {
+    display: none;
 }
 
 .bankItem:hover {
@@ -44,6 +53,7 @@
     display: flex;
     align-items: center;
     padding: 8px 16px;
+    margin: 4px 0;
     gap: 8px;
     height: 40px;
     background: #EEEEEE;
@@ -62,4 +72,4 @@
 .bankIcon {
     width: 24px;
     height: 24px;
-} */
+}

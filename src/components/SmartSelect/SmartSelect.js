@@ -1,19 +1,32 @@
 import React, {useState} from "react";
 import "./SmartSelect.css";
-import { SmartRadio } from "./SmartRadio/SmartRadio";
 
 export function SmartSelect({
     label,
-    types
+    types,
+    translations,
+    onChange,
+    value
 }) {
     return(
         <div className="building">
                 <div className="buildingLabel">{label}</div>
                 <div className="radioGroup">
                     {types.map(type => {
-                        return ( 
-                            <SmartRadio option={type}/>
-                        )
+                        return <label className="buildingType">
+                            <input
+                                type="radio" 
+                                name="buildingType"
+                                value={type}
+                                checked={type === value}
+                                onChange={(e) => onChange(e.target.value)}
+                            />
+                            <span 
+                                className={type === value ? "buildingSpanClick" : "buildingSpan"} 
+                            >
+                            </span>
+                            {translations[type]}
+                        </label>
                     })}
                 </div>
                 

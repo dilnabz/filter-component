@@ -1,10 +1,11 @@
 import React from "react";
-import { BankItem } from "./BankItem/BankItem";
 import "./Banks.css"
 
 export function Banks({
     label,
-    banks
+    banks,
+    value,
+    onChange
 }) {
     return(
         <div className="bankContainer">
@@ -12,7 +13,16 @@ export function Banks({
                 <div className="bankField">
                     {banks.map(bank => {
                         return(
-                            <BankItem icon ={bank[1]} name={bank[0]}/>
+                            <label className={value.includes(bank[0]) ? "bankItemClick" : "bankItem"}>
+                                <input 
+                                    type="checkbox" 
+                                    name="checkbox" 
+                                    checked={value.includes(bank[0])}
+                                    onChange={(e) => onChange(e.target.value)}
+                                />
+                                <div className="bankIcon"><img src={bank[2]} /></div>
+                                <div className="bankName">{bank[1]}</div>
+                            </label>
                         )
                     })}
                 </div>
