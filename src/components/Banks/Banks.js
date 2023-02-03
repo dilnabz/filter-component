@@ -4,21 +4,28 @@ import "./Banks.css"
 export function Banks({
     label,
     banks,
-    value,
+    selectedBanks,
     onChange
 }) {
+    function handleChange(event) {
+        const {value} = event.target;
+        if (selectedBanks.includes(value)) {
+            onChange(selectedBanks.filter(elem => elem !== value));
+        } else {onChange([...selectedBanks, value]);}
+    }
     return(
         <div className="bankContainer">
                 <div className="bankLabel">{label}</div>
                 <div className="bankField">
                     {banks.map(bank => {
                         return(
-                            <label className={value.includes(bank[0]) ? "bankItemClick" : "bankItem"}>
+                            <label className={selectedBanks.includes(bank[0]) ? "bankItemClick" : "bankItem"}>
                                 <input 
                                     type="checkbox" 
-                                    name="checkbox" 
-                                    checked={value.includes(bank[0])}
-                                    onChange={(e) => onChange(e.target.value)}
+                                    name="checkbox"
+                                    value={bank[0]}
+                                    checked={selectedBanks.includes(bank[0])}
+                                    onChange={handleChange}
                                 />
                                 <div className="bankIcon"><img src={bank[2]} /></div>
                                 <div className="bankName">{bank[1]}</div>

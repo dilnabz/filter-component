@@ -19,6 +19,12 @@ const buildingType2Translation = {
     "new":  "Новостройка",
     "secondary": "Вторичка"
 };
+const housingTypes = ["house", "flat", "apartment"];
+const housingType2Translation = {
+    "house": "Дом",
+    "flat":  "Квартира",
+    "apartment": "Апартаменты"
+};
 const percentages = [10, 15, 20, 25, 30];
 const mortgageTerms = [5, 10, 15, 20];
 const subBanks = [
@@ -31,14 +37,13 @@ const subBanks = [
     ["raif","Райффайзенбанк", raiffaizenIcon]
 ]
 
-
-const housingTypes = ["Дом", "Квартира", "Апартаменты"];
 export function App() {
     const [creditValue, setCreditValue] = useState(1000000);
     const [initPaymentValue, setInitPaymentValue] = useState(10);
     const [mortgageTermValue, setMortgageTermValue] = useState(5);
     const [buildingType, setBuildingType] = useState("secondary");
-    const [selectedBanks, setSelectedBanks] = useState(["vtb", "psb", "sovcom"]);
+    const [housingType, setHousingType] = useState("house");
+    const [selectedBanks, setSelectedBanks] = useState([]);
     return (
     <div className="container">
         <div className="header">
@@ -76,10 +81,9 @@ export function App() {
             <Banks 
                 label={"Банк"}
                 banks={subBanks}
-                value={selectedBanks}
+                selectedBanks={selectedBanks}
                 onChange={setSelectedBanks}
             />
-            --------------------
             <SmartSelect 
                 label={"Тип объекта"}
                 types={buildingTypes}
@@ -87,11 +91,13 @@ export function App() {
                 onChange={setBuildingType}
                 value={buildingType}
             />
-            --------------------
-            {/* <SmartSelect 
+            <SmartSelect 
                 label={"Тип жилья"}
                 types={housingTypes}
-            /> */}
+                translations={housingType2Translation}
+                onChange={setHousingType}
+                value={housingType}
+            />
             <div className="insurance">
                 <p>
                     <input 

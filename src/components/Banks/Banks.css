@@ -3,8 +3,6 @@
     flex-direction: column;
     padding: 8px 0px;
     gap: 8px;
-    /* width: 231px;
-    height: 328px; */
     margin-top: 20px;
 }
 
@@ -20,9 +18,6 @@
 .bankField {
     display: flex;
     flex-direction: column;
-    /* padding: 0px;
-    width: 231px;
-    height: 280px; */
 }
 
 .bankItem {
